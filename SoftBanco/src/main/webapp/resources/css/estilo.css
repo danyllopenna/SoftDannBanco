@@ -4,10 +4,11 @@
 .timage{
 	
 	background-color: black;
-	width: 6000px;
-	height: 6000px;
+	width: 600px;
+	height: 600px;
+	
 }
 .bimage{
 	background-image: url("images/indio.jpg");
-	margin: 50px 50px 50px 50px;
+	
 }
