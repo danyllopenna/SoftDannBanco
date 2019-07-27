@@ -2,6 +2,8 @@ package com.danyllopenna.factory;
 
 import java.sql.*;
 
+
+
 public class Conexao {
 	public static String CAMINHO = "jdbc:postgresql://localhost:5432/banco";
 	public static String USUARIO = "postgres";
@@ -10,6 +12,7 @@ public class Conexao {
 	
 	public static Connection conectando() {
 		try {
+			DriverManager.registerDriver(new org.postgresql.Driver());
 			conectar = DriverManager.getConnection(CAMINHO, USUARIO,SENHA);
 			System.out.println("conectado com sucesso");
 		} catch (Exception e) {

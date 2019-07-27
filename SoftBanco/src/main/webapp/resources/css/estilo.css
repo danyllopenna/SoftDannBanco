@@ -12,3 +12,8 @@
 	background-image: url("images/indio.jpg");
 	
 }
+.telaLogin{
+	width: 100px;
+	height: 100px;
+	background-color: gray;
+}

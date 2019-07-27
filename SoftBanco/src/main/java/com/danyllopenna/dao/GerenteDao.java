@@ -31,18 +31,19 @@ public class GerenteDao {
 			e.printStackTrace();
 		}
 	}
+	/*
 	public static void main(String[] args) {
 		Gerente g1 = new Gerente();
-		g1.setEmail("dann@email.com");
-		g1.setEndereco("passagem ali, 52");
+		g1.setEmail("diego@email.com");
+		g1.setEndereco("passagem onde, 52");
 		g1.setLogin("gerente");
-		g1.setNome("dann");
+		g1.setNome("diego");
 		g1.setSenha("4521");
 		g1.setSobrenome("penna");
 		g1.setTelefone("32145");
-		g1.setTipopessoa("gerente");
+		g1.setTipopessoa("funcionario");
 		
 		GerenteDao dao = new GerenteDao();
 		dao.salvarGerente(g1);
-	}
+	} */
 }

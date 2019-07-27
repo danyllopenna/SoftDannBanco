@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+		xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:f="http://java.sun.com/jsf/core"
+		xmlns:ui="http://java.sun.com/jsf/facelets"
+		template="/templates/modeloUnico.xhtml">
+		
+		<ui:define name="menu">
+		<ui:include src="/includes/menuPrincipal.xhtml"/>
+		</ui:define>
+		
+		<ui:define name="conteudo">
+		<div class="container-fluid">
+		<div class="row">
+		<div class="col-2 border border-success" style="height: 600px"></div>
+		<div class="col-8">
+		<h2 style="padding-top: 30px;padding-left: 30%">Cadastro Pessoal:</h2>
+		
+		<h:form style="padding-top: 30px" class="needs-validation">
+  <div class="form-row">
+    <div class="form-group col-md-6 border-success">
+      <label for="inputNome">Nome:</label>
+      <h:inputText type="text" class="form-control" id="inputNome" placeholder="Nome" value="#{MBpessoa.gerente.nome}"/>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputSobrenome">Sobrenome:</label>
+      <h:inputText type="text" class="form-control" id="inputSobrenome" placeholder="Sobrenome" value="#{MBpessoa.gerente.sobrenome}"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputEndereco">Endereço:</label>
+    <h:inputText type="text" class="form-control" id="inputEndereco" placeholder="1234 Main St" value="#{MBpessoa.gerente.endereco}"/>
+  </div>
+  <div class="form-row">
+  <div class="form-group col-md-6">
+    <label for="inputTelefone">Telefone:</label>
+    <h:inputText type="text" class="form-control" id="inputTelefone" placeholder="(91)98455-7845" value="#{MBpessoa.gerente.telefone}"/>
+  </div>
+  <div class="form-group col-md-6">
+      <label for="inputSobrenome">email:</label>
+      <h:inputText type="email" class="form-control" id="inputEmail" placeholder="exemplo@email.com" value="#{MBpessoa.gerente.email}"/>
+    </div>
+  
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputLogin">Login:</label>
+      <h:inputText type="text" class="form-control" id="inputLogin" value="#{MBpessoa.gerente.login}"/>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputTipo">Tipo:</label>
+      <h:selectOneMenu id="inputState" class="form-control" value="#{MBpessoa.gerente.tipopessoa}">
+        <f:selectItem itemValue="gerente" itemLabel="gerente"/>
+        <f:selectItem itemValue="cliente" itemLabel="funcionario"/>
+      </h:selectOneMenu>
+       
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputSenha">Senha:</label>
+      <h:inputText type="text" class="form-control" id="inputSenha" value="#{MBpessoa.gerente.senha}"/>
+    </div>
+  </div>
+ 
+  <h:commandButton type="submit" class="btn btn-primary" actionListener="#{MBpessoa.novo()}" value="Cadastrar" />
+  <h:commandButton type="submit" class="btn btn-primary" actionListener="#{MBpessoa.preparanovo()}" value="chamarNovo"/>
+  
+</h:form>
+</div>
+<div class="col-2 border border-success" style="height: 600px"></div>
+
+</div>
+</div>
+		</ui:define>
+		
+		
+		
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script>
+
+</ui:composition>
